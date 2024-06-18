@@ -26,10 +26,10 @@ import { resizeRendererToDisplaySize } from './helpers/responsiveness'
 import './style.css'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'; 
-import { Font } from 'three/examples/jsm/fonts/Font.js';
-import * as THREE from 'three';
+// import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
+// import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'; 
+// import { Font } from 'three/examples/jsm/fonts/Font.js';
+// import * as THREE from 'three';
 
 const CANVAS_ID = 'scene'
 
@@ -175,35 +175,35 @@ function init() {
 
 
 
-    const fontLoader = new FontLoader()
-    fontLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/fonts/helvetiker_regular.typeface.json', (font: Font) => {
-      const textGeometry = new TextGeometry('DJONTSO', {
-        font,
-        size: 1,
-        height: 0.5,
-        curveSegments: 12,
-        bevelEnabled: true,
-        bevelThickness: 0.2,
-        bevelSize: 0.1,
-        bevelOffset: 0,
-      })
-      const textMesh = new Mesh(textGeometry, new MeshLambertMaterial({ color: 'blue' }))
-      textMesh.position.set(0, 4, 3)
-      textMesh.scale.set(1, 1, 1)
-      scene.add(textMesh)
-      function animate() {
-        requestAnimationFrame(animate);
-        if (animation.enabled && animation.play) {
-          animations.bounce(textMesh, clock, 1, 1.7, 1.5);
-          // animations.rotate(textMesh, clock, Math.PI / 3);
-          animations.bounce(textMesh, clock, 1, 0.9, 0.5);
-          // textMesh.rotation.x += 0.01;
-          // textMesh.rotation.y += 0.01;
-        }
-        renderer.render(scene, camera);
-      }
-      animate();
-    })
+    // const fontLoader = new FontLoader()
+    // fontLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/fonts/helvetiker_regular.typeface.json', (font: Font) => {
+    //   const textGeometry = new TextGeometry('DJONTSO', {
+    //     font,
+    //     size: 1,
+    //     height: 0.5,
+    //     curveSegments: 12,
+    //     bevelEnabled: true,
+    //     bevelThickness: 0.2,
+    //     bevelSize: 0.1,
+    //     bevelOffset: 0,
+    //   })
+    //   const textMesh = new Mesh(textGeometry, new MeshLambertMaterial({ color: 'blue' }))
+    //   textMesh.position.set(0, 4, 3)
+    //   textMesh.scale.set(1, 1, 1)
+    //   scene.add(textMesh)
+    //   function animate() {
+    //     requestAnimationFrame(animate);
+    //     if (animation.enabled && animation.play) {
+    //       animations.bounce(textMesh, clock, 1, 1.7, 1.5);
+    //       // animations.rotate(textMesh, clock, Math.PI / 3);
+    //       animations.bounce(textMesh, clock, 1, 0.9, 0.5);
+    //       // textMesh.rotation.x += 0.01;
+    //       // textMesh.rotation.y += 0.01;
+    //     }
+    //     renderer.render(scene, camera);
+    //   }
+    //   animate();
+    // })
     
 
     // const generateSphere = (radius: number, widthSegments: number, heightSegments: number) => new Float32Array([

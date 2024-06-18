@@ -13,3 +13,10 @@ updates:
 
 # npm run dev
 # npm install
+
+
+# git init
+# git add .
+# git commit -m "Initial commit"
+# git remote add origin https://github.com/DvGt-dev/Vite-Treejs-gltf-byDV.git
+# git push -u origin main

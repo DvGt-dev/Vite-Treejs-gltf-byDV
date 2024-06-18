@@ -11,6 +11,7 @@ updates:
       interval: "weekly"
 
 
+
 # npm run dev
 # npm install
 
@@ -20,3 +21,4 @@ updates:
 # git commit -m "Initial commit"
 # git remote add origin https://github.com/DvGt-dev/Vite-Treejs-gltf-byDV.git
 # git push -u origin main
+

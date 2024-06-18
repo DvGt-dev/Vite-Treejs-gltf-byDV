@@ -206,31 +206,31 @@ function init() {
     })
     
 
-    const generateSphere = (radius: number, widthSegments: number, heightSegments: number) => new Float32Array([
-      ...[...Array(heightSegments + 1).keys()].flatMap(y => 
-        [...Array(widthSegments + 1).keys()].flatMap(x => {
-          const theta = (y * Math.PI) / heightSegments;
-          const phi = (x * 2 * Math.PI) / widthSegments;
-          const sinTheta = Math.sin(theta);
-          const cosTheta = Math.cos(theta);
-          const sinPhi = Math.sin(phi);
-          const cosPhi = Math.cos(phi);
-          return [radius * cosPhi * sinTheta, radius * cosTheta, radius * sinPhi * sinTheta];
-        })
-      )
-    ]);
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute('position', new THREE.BufferAttribute(generateSphere(1, 32, 32), 3));
-    const sphere = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true }));
-    sphere.position.set(0, 1, 0);
-    scene.add(sphere);
-    const animate2 = () => {
-      requestAnimationFrame(animate2);
-      sphere.rotation.x += 0.01;
-      sphere.rotation.y += 0.01;
-      renderer.render(scene, camera);
-    };
-    animate2();
+    // const generateSphere = (radius: number, widthSegments: number, heightSegments: number) => new Float32Array([
+    //   ...[...Array(heightSegments + 1).keys()].flatMap(y => 
+    //     [...Array(widthSegments + 1).keys()].flatMap(x => {
+    //       const theta = (y * Math.PI) / heightSegments;
+    //       const phi = (x * 2 * Math.PI) / widthSegments;
+    //       const sinTheta = Math.sin(theta);
+    //       const cosTheta = Math.cos(theta);
+    //       const sinPhi = Math.sin(phi);
+    //       const cosPhi = Math.cos(phi);
+    //       return [radius * cosPhi * sinTheta, radius * cosTheta, radius * sinPhi * sinTheta];
+    //     })
+    //   )
+    // ]);
+    // const geometry = new THREE.BufferGeometry();
+    // geometry.setAttribute('position', new THREE.BufferAttribute(generateSphere(1, 32, 32), 3));
+    // const sphere = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true }));
+    // sphere.position.set(0, 1, 0);
+    // scene.add(sphere);
+    // const animate2 = () => {
+    //   requestAnimationFrame(animate2);
+    //   sphere.rotation.x += 0.01;
+    //   sphere.rotation.y += 0.01;
+    //   renderer.render(scene, camera);
+    // };
+    // animate2();
 
     
     scene.add(cube)
